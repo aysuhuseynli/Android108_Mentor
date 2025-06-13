@@ -1,7 +1,7 @@
 fun main() {
     //task24()
     //task25()
-    task30()
+    //task30()
 }
 
 fun task24(){
