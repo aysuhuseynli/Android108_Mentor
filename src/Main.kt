@@ -1,45 +1,112 @@
+import kotlin.random.Random
+
 fun main() {
-    //task24()
-    //task25()
-    //task30()
+//    task35()
+//    task36()
+//    task37()
+//    task38()
+//    task39()
+//    task40()
+    task42()
 }
 
-fun task24(){
-    val number = readln().toInt()
-    var factorial = 1
-    for (i in 1..number){
-        factorial *= i
+fun task35(){
+    var number = 546
+    val length = number.toString().length
+    var mul = 1
+    for (i in 1..length){
+        val digit = number % 10
+        mul*=digit
+        number/=10
     }
-    println(factorial)
+
+    println(mul)
 }
 
-fun task25(){
-    val text = readln() // salam
-    var reversedText = ""
-
-    for (index in text.length-1 downTo 0){
-        reversedText += text[index]
+fun task36(){
+    val number = 5
+    val pow = 1
+    var result = 1
+    for (i in 1..pow){
+        result*=number
     }
-    println(reversedText)
-
+    println(result)
 }
 
-fun task30(){
-    println("Cumle daxil edin: ")
-    val sentence = readln() //salam
-    print("Hansi herfi evez edek? ")
-    val oldLetter = readln()  //a
-    print("Hansi herf ile evez edek? ")
-    val newLetter = readln()  //e
-    var newText = ""
-
-    for(i in sentence){
-        if(i.toString() == oldLetter){
-            newText+= newLetter
+fun task37(){
+    val randomNum= Random.nextInt(1,101)
+    var guess: Int
+    do {
+        guess = readln().toInt()
+        if (guess==randomNum){
+            println("Tebrikler! dogru cavab $guess")
+        }else if (guess>randomNum){
+            println("Ededi azalt")
         }else{
-            newText+=i
+            println("Ededi artir")
+        }
+    }while (guess!=randomNum)
+}
+
+fun task38(){
+    var sum = 0
+    var random: Int
+    while (sum<=50){
+        random = Random.nextInt(1,11)
+        print("$random ")
+        sum+=random
+    }
+    println("Sum: $sum")
+}
+
+fun task39(){
+    val number = 8
+    var i = 1
+    var sum = 0
+    while (i<=number){
+        val square = i*i
+        sum += square
+        println(square)
+        i++
+    }
+    println("Sum: $sum")
+}
+
+fun task40(){
+    val number = 258
+    var check = true
+    for (i in number.toString()){
+        if (i.digitToInt()%2!=0){
+            check = false
         }
     }
-    println(newText)
 
+    if (check){
+        println("$number butun ededleri cutdur")
+    }else{
+        println("$number butun edeleri cut deyil")
+    }
 }
+
+fun task42(){
+    val num1 = readln().toInt() //18
+    val num2 = readln().toInt() //12
+    val loop = if(num1 > num2) num2 else num1
+
+    for (i in loop downTo 1){
+        if(num1%i==0 && num2%i == 0){
+            println(i)
+            break
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
